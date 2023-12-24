@@ -1,56 +1,42 @@
-/* Navbar.css */
+.Laptop-view{
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  /* display: inline; */
+  z-index: 999;
+}
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    /* background-color: #333; */
-    color: #fff;
-    background-image: linear-gradient(to right, #0c0e1c 11.72%, #131524 87.67%);
+.drawer-box{
+  background-color: black;
+  color: white;
+}
+
+
+.mobileDiv{
+  display: none;
+}
+
+@media all and (min-width: 624px) and (max-width: 1040px){
+  .Laptop-view{
+      display: none;
   }
-  
-  .logo {
-    flex: 1;
+
+  .mobileDiv{
+      display: block;
+      position: fixed;
   }
-  
-  .logoImage {
-    width: 100px; /* Adjust the width as needed */
-    height: auto;
+
+}
+@media all and  (max-width: 624px){
+  .Laptop-view{
+      display: none;
   }
-  
-  .menu {
-    flex: 2;
+
+  .mobileDiv{
+      display: block;
+      position: fixed;
+      width: 90vw;
+      z-index: 999;
   }
-  
-  .menuList {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .menuItem {
-    text-decoration:none;
-    
-    margin: 0 10px;
-    cursor: pointer;
-  }
-  
-  .buttons {
-    flex: 1;
-    text-decoration:none;
-    text-align: right;
-  }
-  
-  .button {
-    margin: 0 10px;
-    padding: 8px 15px;
-    background-color: #fff;
-    color: #333;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration:none;
-  }
-  
+
+}

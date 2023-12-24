@@ -31,12 +31,15 @@
   }
   
   .menuItem {
+    text-decoration:none;
+    
     margin: 0 10px;
     cursor: pointer;
   }
   
   .buttons {
     flex: 1;
+    text-decoration:none;
     text-align: right;
   }
   
@@ -48,5 +51,6 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    text-decoration:none;
   }
   

@@ -1,8 +1,9 @@
 import React from 'react';
 import './Navbar.css'; 
 import UpscallerLogo from '../../Assets/Images/UpscallerLogo.jpg'
+import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({openSignupPopup}) => {
 
 
 
@@ -20,7 +21,7 @@ return (
       {/* Center Section - Menu Bar */}
       <div className="menu">
         <ul className="menuList">
-          <li className="menuItem">Home</li>
+          <li className="menuItem"><Link to='/'>Home</Link></li>
           <li className="menuItem">About</li>
           <li className="menuItem">Services</li>
         </ul>
@@ -28,8 +29,8 @@ return (
 
       {/* Right Section - Login and Signup Buttons */}
       <div className="buttons">
-        <button className="button">Login</button>
-        <button className="button">Signup</button>
+        <button className="button" style={{textDecoration:"none"}}><Link to='/login'>Login</Link></button>
+        <button className="button"><Link to="/signup"  onClick={openSignupPopup}>Signup</Link></button>
       </div>
     </nav>
   );

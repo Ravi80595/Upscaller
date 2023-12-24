@@ -57,9 +57,14 @@ return (
         <Flex fontSize={['15px',20,20,20]} justifyContent='space-around' pt={'20px'} w={'40%'}>
             <Text className='Link_btns'>Home</Text>
             <Text className='Link_btns'>About Us</Text>
-            <Text className='Link_btns'>Our Team</Text>
-            <Text className='Link_btns'>Careers</Text>
+            {/* <Text className='Link_btns'>Our Team</Text> */}
+            <Text className='Link_btns'>Services</Text>
             <Text className='Link_btns'>Contact Us</Text>
+        </Flex>
+        <Box w={'25%'}>
+        <Flex pt={'20px'} w={'20%'} m={'auto'} gap={'20px'}>
+          <Button>Login</Button>
+          <Button background={'white'} color={'black'} p={'8px'} borderRadius={'50px'}>Contact Now</Button>
         </Flex>
         <Box w={'20%'}>
         <Flex pt={'20px'} w={'20%'} m={'auto'} gap={'10px'}>

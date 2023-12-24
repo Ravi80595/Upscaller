@@ -66,6 +66,7 @@ return (
           <Button>Login</Button>
           <Button background={'white'} color={'black'} p={'8px'} borderRadius={'50px'}>Contact Now</Button>
         </Flex>
+        </Box>
         <Box w={'20%'}>
         <Flex pt={'20px'} w={'20%'} m={'auto'} gap={'10px'}>
         <SignupModal />

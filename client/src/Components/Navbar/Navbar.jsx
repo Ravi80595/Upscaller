@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom'
 // import ScrollToTopLink from './ScrollToTopLink'
 import './Navbar.css'
 import MobNav from './MobNav'
+import SignupModal from '../SignUp/SignUpModal';
+import LoginModal from '../Login/LoginModal'
 
 
 
@@ -64,6 +66,11 @@ return (
           <Button>Login</Button>
           <Button background={'white'} color={'black'} p={'8px'} borderRadius={'50px'}>Contact Now</Button>
         </Flex>
+        <Box w={'20%'}>
+        <Flex pt={'20px'} w={'20%'} m={'auto'} gap={'10px'}>
+        <SignupModal />
+        <LoginModal/>
+      </Flex>
         </Box>
         </Flex>
     </Box>

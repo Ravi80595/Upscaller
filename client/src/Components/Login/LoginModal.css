@@ -1,0 +1,40 @@
+
+.modal-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  
+  .modal-content {
+    background: url('https://www.xeretec.co.uk/wp-content/uploads/2022/09/Production-Background-Landing-Page.jpg') center/cover no-repeat;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: white;
+    width: 80%;
+    max-width: 400px;
+    height: 50%;
+    margin: auto;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .modal-Input {
+    border-radius: 10px;
+    padding: 8px;
+    gap:10px;
+  }
+  

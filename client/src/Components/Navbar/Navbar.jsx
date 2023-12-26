@@ -16,10 +16,8 @@ const Navbar = () => {
     const [navbarTextColor, setNavbarTextColor] = useState('white');
   
     useEffect(() => {
-      // Add an event listener to track scroll position and update the navbar background
       window.addEventListener('scroll', handleScroll);
   
-      // Remove the event listener when the component unmounts
       return () => {
         window.removeEventListener('scroll', handleScroll);
       };

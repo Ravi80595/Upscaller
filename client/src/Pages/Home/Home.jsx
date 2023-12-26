@@ -5,6 +5,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { Button } from '@chakra-ui/button';
 import { Image } from '@chakra-ui/image';
 import Footer from '../../Components/Footer/Footer'
+import Commitment from './Commitment';
 
 
 const Home = () => {
@@ -37,8 +38,11 @@ return (
         <Image w={'70px'} src='https://socotratrip.com/wp-content/uploads/2022/05/animation_640_l3k1n5d3.gif'/>
       </Flex>
       </Box>
+      
+      <Commitment/>
       <Footer/>
       </Box>
+      
   )
 }
 

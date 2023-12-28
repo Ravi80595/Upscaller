@@ -4,7 +4,7 @@ import React from 'react'
 
 
 
-const AdminHome = () => {
+const ClientHome = () => {
 
 
 
@@ -29,4 +29,4 @@ return (
 }
 
 
-export default AdminHome
+export default ClientHome

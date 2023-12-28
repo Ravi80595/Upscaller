@@ -3,15 +3,16 @@ import "./Dashboard.css"
 import { Flex,Box,Text,Menu,MenuButton,MenuGroup,MenuDivider,MenuList,MenuItem,Avatar,Image} from '@chakra-ui/react'
 import { useState } from 'react'
 import {GiPostStamp} from "react-icons/gi"
-import axios from 'axios'
+// import axios from 'axios'
 // import Reports from './AdminHome'
 import { IoAnalyticsSharp } from "react-icons/io5";
 import { MdOutlineAccessTime } from "react-icons/md";
-import UpscallerLogo from '../../Assets/Images/UpscallerLogo.jpg'
+// import UpscallerLogo from '../../Assets/Images/UpscallerLogo.png'
 import { baseUrl } from '../../Utils/BaseUrl'
 import ProjectSummary from './ProjectSummary'
 import { Link } from 'react-router-dom'
-import AdminHome from './AdminHome'
+// import AdminHome from './ClientHome'
+import ClientHome from './ClientHome'
 
 
 
@@ -105,7 +106,7 @@ return (
     </Box>
   <Box id='rhsBody' m='30px' p='30px'>
 {
-show==="create"?<AdminHome data={profileData}/>:show==="create"?<ProjectSummary data={profileData}/>:<h1>Fearture Available Soon</h1>
+show==="create"?<ClientHome data={profileData}/>:show==="create"?<ProjectSummary data={profileData}/>:<h1>Fearture Available Soon</h1>
 }
 
 </Box>

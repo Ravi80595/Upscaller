@@ -8,13 +8,13 @@ import softwarePic from '../../Assets/Images/softwarePic.png';
 import webDpic from '../../Assets/Images/webDpic.png';
 import sp from '../../Assets/Images/sp.jpg'
 import cs from '../../Assets/Images/cs.png'
-
+import animated from '../../Assets/Images/animated.gif'
 
 
 const Services = () => {
   return (
     <Box height="100vh" bg="black" color="white" overflowY="auto">
-      <Navbar position="fixed" top="0" left="0" right="0" />
+      <Navbar position="fixed" top="0" left="0" right="0"/>
       <Box
         height="40vh"
         display="flex"
@@ -34,18 +34,34 @@ const Services = () => {
         />
 
         {/* Golden color effect on the right (less intense) */}
-        <Box
-          position="absolute"
-          w="50%"
-          h="100%"
-          borderRadius="300px"
-          bgGradient="linear(to bottom, transparent, rgba(155,223,0,0.2))"
+         <Box
+        position="absolute"
+        top="0"
+        right="0"
+        width="50%"
+        height="100%"
+        borderRadius="300px"
+        bgGradient="linear(to bottom, transparent, rgba(155,223,0,0.2))"
+        overflow="hidden"
+      >
+        <img
+          src={animated}
+          alt="Moving Image"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            opacity: 8, // Adjust the opacity as needed
+            transform: 'translateX(100%)', // Initial position outside the viewport
+            animation: 'moveImage 15s linear infinite', // Adjust the duration as needed
+          }}
         />
-
-        <Text fontSize="3xl" fontWeight="bold" textAlign="center" zIndex="1">
-          Our Services
-        </Text>
       </Box>
+
+      <Text fontSize="3xl" fontWeight="bold" textAlign="center" zIndex="1">
+        Our Services
+      </Text>
+    </Box>
 
       <Box style={{paddingTop:'90px'}} background='black' backgroundRepeat={'no-repeat'} backgroundPosition={'center'} backgroundSize={'cover'} >
       <Flex w={'90%'} direction={['column', 'column', 'column', 'row']} gap={['25px', '125px', '125px', '75px']} h={['730px', '630px', '630px', '93vh']} pt={'40px'} m={'auto'}>

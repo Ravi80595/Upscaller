@@ -17,7 +17,7 @@ import {
   } from '@chakra-ui/react'
 import {Link} from 'react-router-dom'
 // import ScrollToTopLink from "./ScrollToTopLink";
-import UpscallerLogo from '../../Assets/Images/UpscallerLogo.jpg'
+import UpscallerLogo from '../../Assets/Images/UpscallerLogo.png'
 
 const MobNav = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()

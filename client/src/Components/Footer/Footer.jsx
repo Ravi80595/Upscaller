@@ -1,6 +1,6 @@
 import { Box, Flex, Text } from '@chakra-ui/layout'
 import React from 'react'
-import UpscallerLogo from '../../Assets/Images/UpscallerLogo.jpg'
+import UpscallerLogo from '../../Assets/Images/UpscallerLogo.png'
 import { Image } from '@chakra-ui/image'
 import { FaFacebook } from "react-icons/fa";
 import { Button } from '@chakra-ui/button';

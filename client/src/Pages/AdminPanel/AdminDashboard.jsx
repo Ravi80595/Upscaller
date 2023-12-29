@@ -1,22 +1,26 @@
 import React, { useEffect } from 'react'
-import "./Dashboard.css"
+import "../Dashboard/Dashboard.css"
 import { Flex,Box,Text,Menu,MenuButton,MenuGroup,MenuDivider,MenuList,MenuItem,Avatar,Image} from '@chakra-ui/react'
 import { useState } from 'react'
 import {GiPostStamp} from "react-icons/gi"
+// import axios from 'axios'
+// import Reports from './AdminHome'
 import { IoAnalyticsSharp } from "react-icons/io5";
 import { MdOutlineAccessTime } from "react-icons/md";
+// import UpscallerLogo from '../../Assets/Images/UpscallerLogo.png'
 import { baseUrl } from '../../Utils/BaseUrl'
-import ProjectSummary from './ProjectSummary'
 import { Link } from 'react-router-dom'
-import ClientHome from './ClientHome'
+import Clients from './Clients'
+import Projects from './AdminProjects'
+import AdminProjects from './AdminProjects'
 
 
 
-const Dashboard = () => {
+const AdminDashboard = () => {
     const [show,setShow]=useState("Users")
     const [profileData,setProfileData]=useState([])
 
-console.log(profileData,'data')
+
 
 useEffect(() => {
       const token = localStorage.getItem('token');
@@ -30,7 +34,7 @@ useEffect(() => {
           .then((response) => response.json())
           .then((data) => {
             console.log(data,'profile data')
-            setProfileData([data]);
+            setProfileData([data.Data]);
           })
           .catch((error) => {
             console.error('Error fetching user profile:', error);
@@ -52,11 +56,11 @@ return (
       <hr />
       <Flex id='usersBox' _hover={{color:'black'}} p='10px 17px' className='linkItem' onClick={()=>setShow("create")}>
       <MdOutlineAccessTime />
-      <Text pl={["0px","5px",'15px']} className="lhsName">Home</Text>
+      <Text pl={["0px","5px",'15px']} className="lhsName">Clients</Text>
       </Flex>
-      <Flex id='usersBox' _hover={{color:'black'}} p='10px 17px' className='linkItem' onClick={()=>setShow("Posts")}>
+      <Flex id='usersBox' _hover={{color:'black'}} p='10px 17px' className='linkItem' onClick={()=>setShow("Projects")}>
       <GiPostStamp/>
-      <Text pl={["0px","5px",'15px']} className="lhsName">Code Update</Text>
+      <Text pl={["0px","5px",'15px']} className="lhsName">Projects</Text>
       </Flex>
       <Flex id='usersBox' _hover={{color:'black'}} p='10px 17px' className='linkItem' onClick={()=>setShow("Users")}>
       <IoAnalyticsSharp />      
@@ -67,6 +71,21 @@ return (
       <Text pl={["0px","5px",'15px']} className="lhsName">A</Text>
       </Flex>
       </Box>
+
+
+
+      <Box id='linkBox' marginTop={'20px'} color={'white'}>
+      <Text display={["none","none","none","block"]} pb={'5px'} color={'white'} pl={'10px'}>History</Text>
+      <hr />
+      <Flex id='usersBox' _hover={{color:'black'}} p='10px 17px' className='linkItem' onClick={()=>setShow("create")}>
+      <MdOutlineAccessTime />
+      <Text pl={["0px","5px",'15px']} className="lhsName">Clients Data</Text>
+      </Flex>
+      <Flex id='usersBox' _hover={{color:'black'}} p='10px 17px' className='linkItem' onClick={()=>setShow("Posts")}>
+      <GiPostStamp/>
+      <Text pl={["0px","5px",'15px']} className="lhsName">Projects Data</Text>
+      </Flex>
+      </Box>
 </Box>
 
 
@@ -75,21 +94,21 @@ return (
 ))
 } */}
   <Box id='rhsBox' w='84%' ml='16%' h='auto' backgroundColor={'#f9f9f9'}> 
-    <Box id='navbarBox' backgroundColor={'#15283c'} p='0px 40px' pb={'10px'} mb={'10px'}>
-    <Flex justifyContent='space-between' pt={3} pb={8}>
+    <Box id='navbarBox' backgroundColor={'#15283c'} p='0px 40px'>
+    <Flex justifyContent='space-between' pt={3} mb={3}>
     <Text fontWeight='bold'>Welcome</Text>
-    <Menu fontSize="20px" style={{color:'black',paddingBottom:"20px"}}>
+    {/* <Menu fontSize="20px" backgroundColor='black'>
             <MenuButton>
-              <Avatar src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'/>
+              <Avatar w={'30px'} src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'/>
             </MenuButton>
-            <MenuList style={{color:'black'}}>
+            <MenuList>
               <MenuGroup title='Profile'>
                 <Link to="/adminProfile">
                 <MenuItem>My Account</MenuItem>
                 </Link>
               </MenuGroup>
               <MenuDivider />
-              <MenuGroup title='Manage' style={{color:'black'}}>
+              <MenuGroup title='Manage'>
                 <Link to="/adminSetting">
                 <MenuItem>Setting & Privacy</MenuItem>
                 </Link>
@@ -97,12 +116,12 @@ return (
                 <MenuItem>Logout</MenuItem>
               </MenuGroup>
             </MenuList>
-          </Menu>
+          </Menu> */}
     </Flex>
     </Box>
   <Box id='rhsBody' m='30px' p='30px'>
 {
-show==="create"?<ClientHome data={profileData}/>:show==="create"?<ProjectSummary data={profileData}/>:<h1>Fearture Available Soon</h1>
+show==="create"?<Clients data={profileData}/>:show==="Projects"?<AdminProjects data={profileData}/>:<h1>Fearture Available Soon</h1>
 }
 
 </Box>
@@ -111,4 +130,4 @@ show==="create"?<ClientHome data={profileData}/>:show==="create"?<ProjectSummary
   )
 }
 
-export default Dashboard
+export default AdminDashboard

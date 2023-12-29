@@ -4,9 +4,9 @@ import React from 'react'
 
 
 
-const ClientHome = () => {
+const ClientHome = ({data}) => {
 
-
+console.log(data,'ddd')
 
 
 return (
@@ -15,7 +15,7 @@ return (
           <Flex justifyContent={'center'}>
            <Image w={'110px'} src='https://www.shutterstock.com/image-vector/user-profile-icon-vector-avatar-600nw-2220431045.jpg'/>
           </Flex>
-          <Text textAlign={'center'} fontSize={'22px'}>Good evening, Ravi</Text>
+          <Text textAlign={'center'} fontSize={'22px'}>Good evening, {data[0].name}</Text>
           <Text textAlign={'center'}>Here's what is happening in Upscaller today.</Text>
         </Box>
         <Flex>

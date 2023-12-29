@@ -11,6 +11,8 @@ import cs from '../../Assets/Images/cs.png'
 import animated from '../../Assets/Images/animated.gif'
 
 
+
+
 const Services = () => {
   return (
     <Box height="100vh" bg="black" color="white" overflowY="auto">

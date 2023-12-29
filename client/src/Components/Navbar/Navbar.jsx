@@ -1,4 +1,4 @@
-  import { Box,Button,Flex,FormControl,FormLabel,Image,Input,InputGroup,InputRightElement,Text, useDisclosure } from '@chakra-ui/react'
+  import { Box,Button,Flex,FormControl,FormLabel,Image,Input,InputGroup,InputRightElement,Text, useDisclosure, useToast } from '@chakra-ui/react'
   import React, { useEffect, useState } from 'react'
   import UpscallerLogo from '../../Assets/Images/UpscallerLogo.png'
   import {CloseIcon} from '@chakra-ui/icons'
@@ -31,6 +31,9 @@ import { baseUrl } from '../../Utils/BaseUrl'
         email:"",
         password:"",
       })
+      const toast=useToast()
+
+
       useEffect(() => {
         window.addEventListener('scroll', handleScroll);
     
@@ -86,13 +89,13 @@ const handleLogin = async () => {
       const token = data.token;
       localStorage.setItem('token', token);
       navigate('/dashboard');
-      // toast({
-      //   title: 'Welcome to Scroll Labs',
-      //   description: "Influencers collaboration tool only for Laudco clients",
-      //   status: 'success',
-      //   duration: 9000,
-      //   isClosable: true,
-      // })
+      toast({
+        title: 'Welcome to Dashboard.',
+        description: "",
+        status: 'success',
+        duration: 9000,
+        isClosable: true,
+      })
     } else {
       console.error('Login failed');
       alert('Login failed. Please check your credentials and try again.');

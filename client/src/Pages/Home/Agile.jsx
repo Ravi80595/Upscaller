@@ -1,6 +1,6 @@
 import { Box, Flex, Image } from '@chakra-ui/react'
 import React from 'react'
-import AgileBanner from '../../Assets/Images/AgileBanner.png'
+import agile1 from '../../Assets/Images/agile1.gif'
 
 
 const Agile = () => {
@@ -9,7 +9,7 @@ const Agile = () => {
 
 return (
     <Flex justifyContent='center' background={'#131524'}>
-        <Image src={AgileBanner}/>
+        <Image src={agile1}/>
 
     </Flex>
   )

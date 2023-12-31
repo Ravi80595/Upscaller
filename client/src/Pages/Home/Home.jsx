@@ -47,13 +47,20 @@ const Home = () => {
             <FaArrowUp />
           </Button>
         </Flex>
-      </Box>
-
-      <Commitment />
+        <Commitment />
       <Agile />
       <About />
      <Carousel/>
+     
+     <br />
+     <br />
+     <br />
+     <br />
+     <br />
       <Footer />
+      </Box>
+
+      
     </Box>
   );
 };

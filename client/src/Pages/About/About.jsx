@@ -18,7 +18,7 @@ const About = () => {
 
 
 
-  return (
+return (
     <Box background={'black'}>
       <Navbar />
       <Box h={'80vh'}>
@@ -33,7 +33,6 @@ const About = () => {
             overflow="hidden"
 
           >
-            {/* Black background */}
             <Box
               position="absolute"
               top="0"
@@ -43,7 +42,6 @@ const About = () => {
               bgGradient="linear(to right, black, black 50%, rgba(255,223,0,0.3))"
             />
 
-            {/* Golden color effect on the right (less intense) */}
             <Box
               position="absolute"
               top="0"
@@ -67,64 +65,46 @@ const About = () => {
                 }}
               />
             </Box>
-
             <Text fontSize="3xl" fontWeight="bold" textAlign="center" zIndex="1">
               About Us
             </Text>
           </Box>
-
-          <Box style={{ paddingTop: '90px' }} background='black' backgroundRepeat={'no-repeat'} backgroundPosition={'center'} backgroundSize={'cover'} justifyContent={"space-between"}  >
-            <Flex w={'100%'} justifyContent={'space-between'} gap={"100px"} m={'auto'}>
-              <Box w={'43%'} m={'auto'} pl={'60px'} color={'white'} mt={'1px'} >
-                <Heading color={"gray"} fontSize={'1rem'}>
-                  We upscale your project
-                </Heading>
-                <Heading color={'white'} fontSize={'2.7rem'} lineHeight={'1.1em'} fontWeight={'600'}>
-                  As we are Upscaller
-                </Heading>
-                <Text color={"gray"} marginTop={"20px"}>
-                  We blend startup energy with expert strategy to launch your business success. Simple, smart, and geared for growth.
-
-
-                </Text>
-                <Text color="gray">At InteCrit, we're not just consultants; we're the architects of your ambitions. Here, dreams don't just take off—they skyrocket. Partner with us, and let's reach new heights together.</Text>
-                <Flex mt={'99px'} gap={'20px'}>
-
-                </Flex>
-              </Box>
-              <br />
-              <Box w="29%" marginLeft={"500px"} backgroundRepeat="no-repeat" ml="auto">
-                <Image src={puzzle} />
-              </Box>
-
-
-            </Flex>
-
-          </Box>
-          <br />
-          <Box  style={{ paddingTop: '90px' }}
-  bg="gray.900" 
-  backgroundRepeat="no-repeat"
-  backgroundPosition="center"
-  backgroundSize="cover"   >
-            <Flex w={'100%'} justifyContent={'space-between'} m={'auto'}>
-              <Box w={'43%'} m={'auto'} pl={'60px'} color={'white'} mt={'1px'} >
+<Box style={{ paddingTop: '90px' }} background='black' backgroundRepeat={'no-repeat'} backgroundPosition={'center'} backgroundSize=   {'cover'} justifyContent={"space-between"}  >
+    <Flex w={'100%'} justifyContent={'space-between'} direction={['column','column','row','row']} gap={"100px"} m={'auto'}>
+        <Box w={['99%','99%','43%','43%']} m={'auto'} pl={['10px','10px','60px','60px']} color={'white'} mt={'1px'} >
+          <Heading color={"gray"} fontSize={'1rem'}>
+            We upscale your project
+          </Heading>
+          <Heading color={'white'} fontSize={['1.7rem','1.7rem','2.7rem','2.7rem']} lineHeight={'1.1em'} fontWeight={'600'}>
+            As we are Upscaller
+          </Heading>
+          <Text color={"gray"} marginTop={"20px"}>
+            We blend startup energy with expert strategy to launch your business success. Simple, smart, and geared for growth.
+          </Text>
+          <Text color="gray">At InteCrit, we're not just consultants; we're the architects of your ambitions. Here, dreams don't just take off—they skyrocket. Partner with us, and let's reach new heights together.</Text>
+        </Box>
+        <Box w={["49%","49%","29%","29%"]} marginLeft={"500px"} backgroundRepeat="no-repeat" ml="auto">
+          <Image src={puzzle} />
+        </Box>
+      </Flex>
+    </Box>
+    {/* <br /> */}
+<Box style={{ paddingTop: '90px' }} bg="gray.900" backgroundRepeat="no-repeat" backgroundPosition="center" backgroundSize="cover">
+            <Flex w={'100%'} justifyContent={'space-between'} direction={['column-reverse','column-reverse','row','row']} m={'auto'}>
+              <Box w={['99%','99%','43%','43%']} m={'auto'} pl={['20px','20px','60px','60px']} color={'white'} mt={'1px'} >
                 <Heading color={"gray"} fontSize={'1rem'}>
                   Like a puzzle solver
                 </Heading>
                 <Heading color={'white'} fontSize={'1.7rem'} lineHeight={'1.1em'} fontWeight={'600'}>
                   We have your back at every technical hurdle
                 </Heading>
-                <Text color={"gray"} marginTop={"20px"}>
+                <Text color={"gray"} marginTop={"20px"} mb={['30px','30px','0px','0px']}>
                   A final stop for all your technical hurdles. We dont belive on assurance policy , we deliver it.
-
-
                 </Text>
-
               </Box>
-              <br />
+              {/* <br /> */}
               <Flex>
-                <Box w="69%" backgroundRepeat="no-repeat" ml="auto" padding="50px" marginRight="50px" marginBottom="30px">
+                <Box w={["99%","99%","69%","69%"]} backgroundRepeat="no-repeat" ml="auto" padding={["25px","25px","50px","50px"]} marginRight={["5px","5px","50px","50px"]} marginBottom="30px">
                   <Image
                     src={problem}
                     style={{
@@ -134,15 +114,9 @@ const About = () => {
                     }}
                   />
                 </Box>
-
               </Flex>
-
-
-
             </Flex>
-
           </Box>
-
           <Box bg="gray.900">
   <Flex
     justifyContent="space-between"
@@ -155,11 +129,8 @@ const About = () => {
     backgroundSize="cover"
     backgroundPosition="center"
     backgroundRepeat="no-repeat"
-    opacity="0.8"
-    
-  >
-    {/* Content on the left */}
-    <Box width="50%">
+    opacity="0.8">
+    <Box width={["99%","99%","50%","50%"]}>
       <Text fontSize="30px">Why Choose Us?</Text>
       <Text>
         Quality Service Without The High Costs. We Get It - It's Your Startup, And You Have A Budget. We're Affordable So You Can Spend More On Your Actual Business

@@ -77,117 +77,26 @@ fetchClients();
 }, []);
 
   return (
+    <>
     <div style={{ fontFamily: 'Arial, sans-serif', color: '#333' }}>
-      <nav style={{ display: 'flex', justifyContent: 'space-between', padding: '10px'}}>
-        <div>
-          <span style={{ fontWeight: 'bold' }}>Clients</span>
-        </div>
-        <div>
-          <button
-            onClick={() => setShowClientForm(true)}
-            style={{
-              marginLeft: '10px',
-              padding: '10px',
-              backgroundColor: '#4CAF50',
-              color: '#fff',
-              borderRadius: '5px',
-              cursor: 'pointer',
-              border: 'none',
-              fontSize: '14px',
-            }}
-          >
-            Add New Client
-          </button>
-        </div>
-      </nav>
-
-      {showClientForm && (
-        <div
-        style={{
-          position: 'fixed',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: '40%',
-          backgroundColor: '#fff',
-          padding: '20px',
-          border: '1px solid #ccc',
-          borderRadius: '8px',
-          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-          zIndex: '1000',
-        }}
-        >
-          <form onSubmit={handleClientFormSubmit}>            
-              <input
-                type="text"
-                value={clientFormData.name}
-                placeholder='Client Name'
-                onChange={(e) => setClientFormData({ ...clientFormData, name: e.target.value })}
-                style={{ padding: '8px', fontSize: '14px', width: '47%', boxSizing: 'border-box', margin: '5px',border:'1px solid grey',borderRadius:'5px' }}
-              />
-              <input
-                type="text"
-                placeholder='Brand Name'
-                value={clientFormData.brandName}
-                onChange={(e) => setClientFormData({ ...clientFormData, brandName: e.target.value })}
-                style={{ padding: '8px', fontSize: '14px', width: '47%', boxSizing: 'border-box', margin: '5px',border:'1px solid grey',borderRadius:'5px' }}/>
-              <input
-                type="email"
-                placeholder='Email'
-                value={clientFormData.email}
-                onChange={(e) => setClientFormData({ ...clientFormData, email: e.target.value })}
-                style={{ padding: '8px', fontSize: '14px', width: '47%', boxSizing: 'border-box', margin: '5px',border:'1px solid grey',borderRadius:'5px' }}/>
-              <input
-                type="text"
-                placeholder='Password'
-                value={clientFormData.password}
-                onChange={(e) => setClientFormData({ ...clientFormData, password: e.target.value })}
-                style={{ padding: '8px', fontSize: '14px', width: '47%', boxSizing: 'border-box', margin: '5px',border:'1px solid grey',borderRadius:'5px' }}/>          
-              <Textarea
-                type="textarea"
-                placeholder='Remarks (any other requirements)'
-                value={clientFormData.remarks}
-                onChange={(e) => setClientFormData({ ...clientFormData, remarks: e.target.value })}
-                style={{ padding: '8px', fontSize: '14px', width: '96%', boxSizing: 'border-box', marginTop: '5px',border:'1px solid grey',borderRadius:'5px',marginBottom:'5px' }}              />
-
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
-              <button
-                type="submit"
-                style={{
-                  padding: '10px',
-                  backgroundColor: '#4CAF50',
-                  color: '#fff',
-                  borderRadius: '5px',
-                  cursor: 'pointer',
-                  border: 'none',
-                  fontSize: '14px',
-                }}
-              >
-                Submit
-              </button>
-              <button
-                type="button"
-                onClick={() => setShowClientForm(false)}
-                style={{
-                  padding: '10px',
-                  backgroundColor: '#ccc',
-                  color: '#fff',
-                  borderRadius: '5px',
-                  cursor: 'pointer',
-                  border: 'none',
-                  fontSize: '14px',
-                }}
-              >
-                Close
-              </button>
-            </div>
-          </form>
-        </div>
-      )}
-
+       
+     
 <div style={{ marginTop: '40px' }}>
         {displayMode === 'list' && (
-          <div style={{ marginTop: '40px' }}>
+          <>
+      <nav style={{ display: 'flex', justifyContent: 'space-between', padding: '10px'}}>
+            <div>
+           <span style={{ fontWeight: 'bold' }}>Clients</span>
+         </div>
+         <div>
+           <button
+             onClick={() => setShowClientForm(true)}
+             style={{marginLeft: '10px',padding: '10px',backgroundColor: '#4CAF50',color: '#fff',borderRadius: '5px',cursor: 'pointer',border: 'none',fontSize: '14px',}}>
+             Add New Client
+           </button>
+         </div>
+         </nav>
+          <div style={{ marginTop: '10px' }}>
             <TableContainer>
               <Table size='sm'>
                 <Thead>
@@ -213,6 +122,7 @@ fetchClients();
               </Table>
             </TableContainer>
           </div>
+          </>
         )}
         {displayMode === 'details' && (
           <div>
@@ -222,6 +132,90 @@ fetchClients();
         )}
       </div>
     </div>
+    {showClientForm && (
+      <div
+      style={{
+        position: 'fixed',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '40%',
+        backgroundColor: '#fff',
+        padding: '20px',
+        border: '1px solid #ccc',
+        borderRadius: '8px',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+        zIndex: '1000',
+      }}
+      >
+        <form onSubmit={handleClientFormSubmit}>            
+            <input
+              type="text"
+              value={clientFormData.name}
+              placeholder='Client Name'
+              onChange={(e) => setClientFormData({ ...clientFormData, name: e.target.value })}
+              style={{ padding: '8px', fontSize: '14px', width: '47%', boxSizing: 'border-box', margin: '5px',border:'1px solid grey',borderRadius:'5px' }}
+            />
+            <input
+              type="text"
+              placeholder='Brand Name'
+              value={clientFormData.brandName}
+              onChange={(e) => setClientFormData({ ...clientFormData, brandName: e.target.value })}
+              style={{ padding: '8px', fontSize: '14px', width: '47%', boxSizing: 'border-box', margin: '5px',border:'1px solid grey',borderRadius:'5px' }}/>
+            <input
+              type="email"
+              placeholder='Email'
+              value={clientFormData.email}
+              onChange={(e) => setClientFormData({ ...clientFormData, email: e.target.value })}
+              style={{ padding: '8px', fontSize: '14px', width: '47%', boxSizing: 'border-box', margin: '5px',border:'1px solid grey',borderRadius:'5px' }}/>
+            <input
+              type="text"
+              placeholder='Password'
+              value={clientFormData.password}
+              onChange={(e) => setClientFormData({ ...clientFormData, password: e.target.value })}
+              style={{ padding: '8px', fontSize: '14px', width: '47%', boxSizing: 'border-box', margin: '5px',border:'1px solid grey',borderRadius:'5px' }}/>          
+            <Textarea
+              type="textarea"
+              placeholder='Remarks (any other requirements)'
+              value={clientFormData.remarks}
+              onChange={(e) => setClientFormData({ ...clientFormData, remarks: e.target.value })}
+              style={{ padding: '8px', fontSize: '14px', width: '96%', boxSizing: 'border-box', marginTop: '5px',border:'1px solid grey',borderRadius:'5px',marginBottom:'5px' }}              />
+
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
+            <button
+              type="submit"
+              style={{
+                padding: '10px',
+                backgroundColor: '#4CAF50',
+                color: '#fff',
+                borderRadius: '5px',
+                cursor: 'pointer',
+                border: 'none',
+                fontSize: '14px',
+              }}
+            >
+              Submit
+            </button>
+            <button
+              type="button"
+              onClick={() => setShowClientForm(false)}
+              style={{
+                padding: '10px',
+                backgroundColor: '#ccc',
+                color: '#fff',
+                borderRadius: '5px',
+                cursor: 'pointer',
+                border: 'none',
+                fontSize: '14px',
+              }}
+            >
+              Close
+            </button>
+          </div>
+        </form>
+      </div>
+    )}
+    </>
   );
 };
 

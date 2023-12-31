@@ -14,10 +14,10 @@ const Footer = () => {
 
 return(
     <Box pt={'40px'} background={'black'} color={'white'} pb={'10px'}> 
-    <Flex justifyContent={'space-around'} w='90%' m={'auto'} pb={'20px'}>
-        <Box w={'24%'}>
+    <Flex justifyContent={'space-around'} direction={['column','column','row','row']} w='90%' m={'auto'} pb={'20px'}>
+        <Box w={['94%','94%','24%','24%']}>
             <Image w={'150px'} src={UpscallerLogo}/>
-            <Text lineHeight={'2rem'}>Empowering companies to become more organised, compliant and enterprise ready</Text>
+            <Text lineHeight={['1.7rem','1.7rem','2rem','2rem']}>Empowering companies to become more organised, compliant and enterprise ready</Text>
             <Flex w={'50%'} pt={'15px'} fontSize={'24px'} justifyContent={'space-around'}>
             <FaFacebook />
             <FaFacebook />
@@ -38,10 +38,10 @@ return(
             <Text>Netaji Subhash Place Delhi 110036</Text>
             <Text>+91 9306454204</Text>
         </Box>
-        <Box w={'24%'}>
+        <Box w={['99%','99%','24%','24%']}>
             <Text fontWeight={'600'} pb={'10px'} fontSize={'20px'}>Subscribe</Text>
             <Input borderRadius={'10px'} p={'10px'} placeholder='Enter email'/>
-            <Button> Submit</Button>
+            <Button mt={'10px'}> Submit</Button>
             <Text pt={'10px'}>Subscribe for trends and tips! Get fresh insights and success strategies.</Text>
         </Box>
     </Flex>

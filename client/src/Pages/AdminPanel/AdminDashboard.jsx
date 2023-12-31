@@ -13,6 +13,7 @@ import { Link } from 'react-router-dom'
 import Clients from './Clients'
 import Projects from './AdminProjects'
 import AdminProjects from './AdminProjects'
+import ProjectForm from './ProjectForm'
 
 
 
@@ -20,7 +21,7 @@ const AdminDashboard = () => {
     const [show,setShow]=useState("Users")
     const [profileData,setProfileData]=useState([])
 
-
+// console.log(profileData,'dddd')
 
 useEffect(() => {
       const token = localStorage.getItem('token');
@@ -33,8 +34,8 @@ useEffect(() => {
         })
           .then((response) => response.json())
           .then((data) => {
-            console.log(data,'profile data')
-            setProfileData([data.Data]);
+            // console.log(data,'profile data')
+            setProfileData([data]);
           })
           .catch((error) => {
             console.error('Error fetching user profile:', error);
@@ -121,7 +122,7 @@ return (
     </Box>
   <Box id='rhsBody' m='30px' p='30px'>
 {
-show==="create"?<Clients data={profileData}/>:show==="Projects"?<AdminProjects data={profileData}/>:<h1>Fearture Available Soon</h1>
+show==="create"?<Clients data={profileData}/>:show==="Projects"?<ProjectForm data={profileData}/>:<h1>Fearture Available Soon</h1>
 }
 
 </Box>

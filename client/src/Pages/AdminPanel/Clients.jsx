@@ -21,6 +21,8 @@ const Clients = () => {
   const [clients, setClients] = useState([]);
   const [showClientForm, setShowClientForm] = useState(false);
   const toast=useToast()
+  // console.log(selectedReport,'re')
+
 
 const handleClientFormSubmit = async (e) => {
     e.preventDefault();
@@ -63,7 +65,7 @@ try {
     throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const clientsData = await response.json();
-    console.log(clientsData,'clients')
+    // console.log(clientsData,'clients')
     setClients(clientsData.data);
 } catch (error) {
     console.error('Error fetching influencers:', error);

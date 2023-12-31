@@ -10,11 +10,15 @@ import ProjectDetails from './ProjectDetails';
 const AdminProjects = () => {
     const [showForm,setShowForm]=useState()
     const [formData, setformData] = useState({
-        name: '',
-        brandName:'',
-        email:'',
-        password:'',
-        remarks:''
+      title: '',
+      client: '',
+      milestoneTitle: '',
+      dueDate: '',
+      taskTitle: '',
+      taskTimeline: '',
+      taskDetails: '',
+      assignedTo: '',
+      status: 'todo',
       });
     const [displayMode, setDisplayMode] = useState('list');
     const [clients,setClients]=useState([])

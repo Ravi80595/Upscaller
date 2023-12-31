@@ -7,6 +7,7 @@ import Contact from '../Pages/Contact/Contact'
 import Services from '../Pages/Services/Services'
 import Login from '../Pages/SignupLogin/Login'
 import AdminDashboard from '../Pages/AdminPanel/AdminDashboard'
+import ClientHome from '../Pages/Dashboard/ClientHome'
 
 
 
@@ -24,6 +25,8 @@ return (
         <Route path="/services" element={<Services/>}></Route>
         <Route path="/dashboard" element={<Dashboard/>}></Route>
         <Route path="/admin" element={<AdminDashboard/>}></Route>
+        <Route path="/clientHome" element={<ClientHome/>}></Route>
+        <Route path="/clientHome/:id" element={<Dashboard/>}></Route>
     </Routes>
     </>
   )

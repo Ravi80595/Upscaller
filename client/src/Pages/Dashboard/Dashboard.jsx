@@ -9,14 +9,18 @@ import { baseUrl } from '../../Utils/BaseUrl'
 import ProjectSummary from './ProjectSummary'
 import { Link } from 'react-router-dom'
 import ClientHome from './ClientHome'
-
+import ClientTasks from './ClientTasks'
+import UpscallerLogo from '../../Assets/Images/UpscallerLogo.png'
+import ClientSprints from './ClientSprints'
+import GettingStarted from './GettingStarted'
 
 
 const Dashboard = () => {
     const [show,setShow]=useState("Users")
     const [profileData,setProfileData]=useState([])
 
-console.log(profileData,'data')
+// console.log(profileData,'data')
+
 
 useEffect(() => {
       const token = localStorage.getItem('token');
@@ -45,26 +49,33 @@ return (
 <Flex w='100%'>
     <Box backgroundImage={'https://themewagon.github.io/pluto/images/layout_img/pattern_h.png'} backgroundColor="#15283c" id='lhsBox'  fontSize={[12,15,20]} w={["5%","5%","10%","16%"]} h='100vh' p={["0px","0px",'0px']}>
       <Flex justifyContent={'center'} p={'10px'} pt={'20px'}>
-      <Text color={'white'}>Upscaller</Text>
+      {/* <Text color={'white'}>Upscaller</Text> */}
+      <Image w={'70%'} m={'auto'} src={UpscallerLogo}/>
       </Flex>
       <Box id='linkBox' marginTop={'20px'} color={'white'}>
       <Text display={["none","none","none","block"]} pb={'5px'} color={'white'} pl={'10px'}>General</Text>
       <hr />
       <Flex id='usersBox' _hover={{color:'black'}} p='10px 17px' className='linkItem' onClick={()=>setShow("create")}>
       <MdOutlineAccessTime />
-      <Text pl={["0px","5px",'15px']} className="lhsName">Home</Text>
+      <Text pl={["0px","5px",'15px']} className="lhsName">Tasks</Text>
       </Flex>
-      <Flex id='usersBox' _hover={{color:'black'}} p='10px 17px' className='linkItem' onClick={()=>setShow("Posts")}>
+      <Flex id='usersBox' _hover={{color:'black'}} p='10px 17px' className='linkItem' onClick={()=>setShow("sprints")}>
       <GiPostStamp/>
-      <Text pl={["0px","5px",'15px']} className="lhsName">Code Update</Text>
+      <Text pl={["0px","5px",'15px']} className="lhsName">Sprints</Text>
       </Flex>
       <Flex id='usersBox' _hover={{color:'black'}} p='10px 17px' className='linkItem' onClick={()=>setShow("Users")}>
       <IoAnalyticsSharp />      
-      <Text pl={["0px","5px",'15px']} className="lhsName">Figma</Text>
+      <Text pl={["0px","5px",'15px']} className="lhsName">Road Map</Text>
       </Flex>
+      <Flex id='usersBox' _hover={{color:'black'}} p='10px 17px' className='linkItem' onClick={()=>setShow("gettingStarted")}>
+      <MdOutlineAccessTime />
+      <Text pl={["0px","5px",'15px']} className="lhsName">Getting started</Text>
+      </Flex>
+      <Text display={["none","none","none","block"]} pb={'5px'} color={'white'} pl={'10px'} pt={'20px'}>Development</Text>
+      <hr />
       <Flex id='usersBox' _hover={{color:'black'}} p='10px 17px' className='linkItem' onClick={()=>setShow("track")}>
       <MdOutlineAccessTime />
-      <Text pl={["0px","5px",'15px']} className="lhsName">A</Text>
+      <Text pl={["0px","5px",'15px']} className="lhsName">BitBucket updates</Text>
       </Flex>
       </Box>
 </Box>
@@ -102,7 +113,7 @@ return (
     </Box>
   <Box id='rhsBody' m='30px' p='30px'>
 {
-show==="create"?<ClientHome data={profileData}/>:show==="create"?<ProjectSummary data={profileData}/>:<h1>Fearture Available Soon</h1>
+show==="create"?<ClientTasks data={profileData}/>:show==="sprints"?<ClientSprints data={profileData}/>:show==="gettingStarted"?<GettingStarted data={profileData}/>:<h1>Fearture Available Soon</h1>
 }
 
 </Box>

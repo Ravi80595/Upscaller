@@ -122,7 +122,7 @@ return (
     </Box>
   <Box id='rhsBody' m='30px' p='30px'>
 {
-show==="create"?<Clients data={profileData}/>:show==="Projects"?<ProjectForm data={profileData}/>:<h1>Fearture Available Soon</h1>
+show==="create"?<Clients data={profileData}/>:show==="Projects"?<AdminProjects data={profileData}/>:<h1>Fearture Available Soon</h1>
 }
 
 </Box>

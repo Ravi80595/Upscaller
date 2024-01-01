@@ -7,10 +7,11 @@ import { Image } from '@chakra-ui/image';
 import Footer from '../../Components/Footer/Footer';
 import Commitment from './Commitment';
 import Agile from './Agile';
-import au from '../../Assets/Images/au.gif';
+// import au from '../../Assets/Images/au.gif';
 import About from './About';
 import { animateScroll as scroll } from 'react-scroll';
 import Carousel from './Carousel';
+import HomeServices from './HomeServices';
 
 const Home = () => {
   const scrollToTop = () => {
@@ -48,9 +49,10 @@ const Home = () => {
           </Button>
         </Flex>
         <Commitment />
-      <Agile />
+        <HomeServices/>
+      {/* <Agile /> */}
       <About />
-     <Carousel/>
+     {/* <Carousel/> */}
      
      <br />
      <br />

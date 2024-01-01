@@ -13,7 +13,7 @@ const Footer = () => {
 
 
 return(
-    <Box pt={'40px'} background={'black'} color={'white'} pb={'10px'}> 
+    <Box pt={'170px'} background={'black'} color={'white'} pb={'10px'}> 
     <Flex justifyContent={'space-around'} direction={['column','column','row','row']} w='90%' m={'auto'} pb={'20px'}>
         <Box w={['94%','94%','24%','24%']}>
             <Image w={'150px'} src={UpscallerLogo}/>

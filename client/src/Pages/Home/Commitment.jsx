@@ -11,8 +11,8 @@ const Commitment = () => {
 
 return (
     <div>
-      <Box style={{paddingTop:'90px'}} background='linear-gradient(0deg, rgba(19,21,36,1) 0%, rgba(19,21,36,1) 48%, rgba(0,0,0,1) 100%)' backgroundRepeat={'no-repeat'} backgroundPosition={'center'} backgroundSize={'cover'}>
-      <Flex w={'90%'} direction={['column', 'column', 'column', 'row']} gap={['25px', '125px', '125px', '75px']} h={['730px', '630px', '630px', '93vh']} pt={'40px'} m={'auto'}>
+      <Box style={{paddingTop:'90px'}} background='linear-gradient(0deg, rgba(19,21,36,1) 0%, rgba(19,21,36,1) 8%, rgba(0,0,0,1) 100%)' backgroundRepeat={'no-repeat'} backgroundPosition={'center'} backgroundSize={'cover'}>
+      <Flex w={'90%'} direction={['column', 'column', 'column', 'row']} gap={['25px', '125px', '125px', '75px']} h={['730px', '630px', '630px', 'auto']} pt={'40px'} w={'80%'} m={'auto'}>
       <Box w={['99%','99%','43%','43%']} m={'auto'} pl={['10px','10px','60px','60px']} color={'white'} mt={'1px'}>
         <Heading color={"gray"} fontSize={['1rem','1rem','2rem','2rem']}> 
            Our Commitment

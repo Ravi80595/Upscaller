@@ -130,7 +130,7 @@ const handleLogin = async () => {
           <Box w={'25%'}>
           <Flex pt={'15px'} justifyContent={'end'} gap={'20px'}>
           {/* <Button onClick={onOpen}>Login</Button> */}
-             <Text onClick={onOpen} fontSize={20}>Login</Text>
+             <Text onClick={onOpen} fontSize={20} cursor={'pointer'}>Login</Text>
             <Button background={'white'} color={'black'} p={'8px'} borderRadius={'15px'}>Contact Now</Button>
           </Flex>
           </Box>

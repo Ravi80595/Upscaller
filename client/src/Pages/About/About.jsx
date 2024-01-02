@@ -19,13 +19,13 @@ const About = () => {
 
 
 return (
-    <Box background={'black'}>
+    <Box background={'black'} color={'white'}>
       <Navbar />
       <Box h={'80vh'}>
         <Box height="100vh" bg="black" color="white" overflowY="auto">
           <Navbar position="fixed" top="0" left="0" right="0" />
           <Box
-            height="40vh"
+            height="50vh"
             display="flex"
             justifyContent="center"
             alignItems="center"

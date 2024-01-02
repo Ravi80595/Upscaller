@@ -21,56 +21,54 @@ import { baseUrl } from '../../Utils/BaseUrl'
 
 
 
-  const Navbar = () => {
-      const [navbarBackground, setNavbarBackground] = useState('transparent');
-      const [navbarTextColor, setNavbarTextColor] = useState('white');
-      const { isOpen, onOpen, onClose } = useDisclosure()
-      const [show,setShow]=useState(false)
-      const navigate=useNavigate()
-      const [values,setValues]=useState({
-        email:"",
-        password:"",
-      })
-      const toast=useToast()
+const Navbar = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const [show,setShow]=useState(false)
+  const navigate=useNavigate()
+  const [values,setValues]=useState({
+    email:"",
+    password:"",
+  })
+  const toast=useToast()
+  const [navbarBackground, setNavbarBackground] = useState('transparent');
+  const [navbarTextColor, setNavbarTextColor] = useState('white');
 
 
-      useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
+useEffect(() => {
+  window.addEventListener('scroll', handleScroll);
+
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, []);
+
+const handleScroll = () => {
+  if (window.scrollY > 0) {
+    setNavbarBackground('black');
+    setNavbarTextColor('white');
+  } else {
+    setNavbarBackground('transparent');
+    setNavbarTextColor('white');
+  }
+};
     
-        return () => {
-          window.removeEventListener('scroll', handleScroll);
-        };
-      }, []);
-    
-      const handleScroll = () => {
-        if (window.scrollY > 0) {
-          setNavbarBackground('black');
-          setNavbarTextColor('white');
-        } else {
-          setNavbarBackground('transparent');
-          setNavbarTextColor('white');
-        }
-      };
-    
-      const navbarStyle = {
-        backgroundColor: navbarBackground,
-        color: navbarTextColor,
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100%',
-        transition: 'background-color 0.3s ease',
-        zIndex: 1000,
-      };
+const navbarStyle = {
+  backgroundColor: navbarBackground,
+  color: navbarTextColor,
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  width: '100%',
+  transition: 'background-color 0.3s ease',
+  zIndex: 1000,
+};
 
 
-      const handleClick = () => setShow(!show);
+const handleClick = () => setShow(!show);
 
-      const handleChange=(e)=>{
-        setValues({...values,[e.target.name]:e.target.value})
-      }
-    
-    
+const handleChange=(e)=>{
+  setValues({...values,[e.target.name]:e.target.value})
+}
     
     
 const handleLogin = async () => {
@@ -111,9 +109,9 @@ const handleLogin = async () => {
       <Box style={navbarStyle} className='Laptop-view' box-shadow='rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px' p={5} w='100vw' position='fixed' zIndex={9999} background='transparent'>
         <Flex justifyContent='space-between'>
           <Flex w={'20%'}>
-          <Image w={'190px'} mt={'15px'} ml={'20px'} h={'45px'} src={UpscallerLogo}/>
+          <Image w={'190px'} pt={'5px'} ml={'20px'} h={'45px'} src={UpscallerLogo}/>
           </Flex>
-          <Flex fontSize={['15px',20,20,20]} justifyContent='space-around' pt={'20px'} w={'40%'}>
+          <Flex fontSize={['15px',20,20,20]} justifyContent='space-around' pt={'10px'} w={'40%'}>
             <Link to='/'>
               <Text className='Link_btns'>Home</Text>
             </Link>
@@ -128,10 +126,11 @@ const handleLogin = async () => {
               </Link>
           </Flex>
           <Box w={'25%'}>
-          <Flex pt={'15px'} justifyContent={'end'} gap={'20px'}>
-          {/* <Button onClick={onOpen}>Login</Button> */}
+          <Flex pt={'10px'} justifyContent={'end'} gap={'20px'}>
              <Text onClick={onOpen} fontSize={20} cursor={'pointer'}>Login</Text>
+             <Link to='/contact'>
             <Button background={'white'} color={'black'} p={'8px'} borderRadius={'15px'}>Contact Now</Button>
+             </Link>
           </Flex>
           </Box>
           </Flex>

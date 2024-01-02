@@ -15,17 +15,17 @@ import animated from '../../Assets/Images/animated.gif'
 
 const Services = () => {
   return (
-    <Box height="100vh" bg="black" color="white" overflowY="auto">
-      <Navbar position="fixed" top="0" left="0" right="0"/>
+    <Box background={'black'} color={'white'}>
+      <Navbar/>
       <Box
-        height="40vh"
+        height="50vh"
         display="flex"
         justifyContent="center"
         alignItems="center"
         position="relative"
         overflow="hidden"
+        
       >
-        {/* Black background */}
         <Box
           position="absolute"
           top="0"
@@ -35,12 +35,11 @@ const Services = () => {
           bgGradient="linear(to right, black, black 50%, rgba(255,223,0,0.3))"
         />
 
-        {/* Golden color effect on the right (less intense) */}
-         <Box
+    <Box
         position="absolute"
         top="0"
         right="0"
-        width="50%"
+        width={["50%","50%","50%","50%"]}
         height="100%"
         borderRadius="300px"
         bgGradient="linear(to bottom, transparent, rgba(155,223,0,0.2))"
@@ -60,26 +59,23 @@ const Services = () => {
         />
       </Box>
 
-      <Text fontSize="3xl" fontWeight="bold" textAlign="center" zIndex="1">
+    <Text fontSize="3xl" fontWeight="bold" textAlign="center" zIndex="1">
         Our Services
       </Text>
     </Box>
 
-      <Box style={{paddingTop:'90px'}} background='black' backgroundRepeat={'no-repeat'} backgroundPosition={'center'} backgroundSize={'cover'} >
-      <Flex w={'90%'} direction={['column', 'column', 'column', 'row']} gap={['25px', '125px', '125px', '75px']} h={['730px', '630px', '630px', '93vh']} pt={'40px'} m={'auto'}>
-      <Box w={'43%'} m={'auto'} pl={'60px'} color={'white'} mt={'1px'} >
+<Box paddingTop={['20px','10px','90px','90px']} pb={['170px','170px','0px','0px']} background='black' backgroundRepeat={'no-repeat'} backgroundPosition={'center'} backgroundSize={'cover'} >
+    <Flex w={'90%'} direction={['column', 'column', 'column', 'row']} gap={['25px', '25px', '125px', '75px']} h={['730px', '630px', '630px', '93vh']} pt={'40px'} m={'auto'}>
+      <Box w={['99%','93%','43%','43%']} m={'auto'} pl={['0px','0px','60px','60px']} color={'white'} mt={'1px'} >
         <Heading color={"gray"} fontSize={'1rem'}> 
            What we Can do ?
         </Heading>
-        <Heading color={'white'} fontSize={'2.7rem'} lineHeight={'1.1em'} fontWeight={'600'}>
+        <Heading color={'white'} fontSize={['1.5rem','1.7rem','2.7rem','2.7rem']} lineHeight={'1.1em'} fontWeight={'600'}>
           Our Services <span>are Commitments</span> 
         </Heading>
-        <Flex mt={'99px'} gap={'20px'}>
-       
-      </Flex>
       </Box>
       
-      <Box w={'29%'}  backgroundRepeat={'no-repeat'} >
+      <Box w={['92%','92%','29%','29%']}  backgroundRepeat={'no-repeat'} >
       <Box
       position="relative"
       overflow="hidden"
@@ -131,7 +127,7 @@ const Services = () => {
        </Box>
       </Box>
       <br/>
-      <Box w={'29%'} backgroundImage={''} backgroundSize={'fit'} backgroundRepeat={'no-repeat'}>
+      <Box w={['92%','92%','29%','29%']} backgroundImage={''} backgroundSize={'fit'} backgroundRepeat={'no-repeat'}>
        <Box position="relative"
       overflow="hidden"
       borderRadius="md"
@@ -181,7 +177,6 @@ const Services = () => {
        </Box>
       </Box>
       </Flex>
-      
       </Box>
       <Footer />
     </Box>

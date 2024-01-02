@@ -5,7 +5,9 @@ import { Image } from '@chakra-ui/image'
 import { FaFacebook } from "react-icons/fa";
 import { Button } from '@chakra-ui/button';
 import { Input } from '@chakra-ui/input';
-
+import { FaInstagramSquare,FaLinkedin} from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
+import { Link } from 'react-router-dom';
 
 
 const Footer = () => {
@@ -13,24 +15,40 @@ const Footer = () => {
 
 
 return(
-    <Box pt={'170px'} background={'black'} color={'white'} pb={'10px'}> 
+    <Box pt={'30px'} background={'black'} color={'white'} pb={'10px'}> 
     <Flex justifyContent={'space-around'} direction={['column','column','row','row']} w='90%' m={'auto'} pb={'20px'}>
         <Box w={['94%','94%','24%','24%']}>
             <Image w={'150px'} src={UpscallerLogo}/>
             <Text lineHeight={['1.7rem','1.7rem','2rem','2rem']}>Empowering companies to become more organised, compliant and enterprise ready</Text>
             <Flex w={'50%'} pt={'15px'} fontSize={'24px'} justifyContent={'space-around'}>
+            <a href="https://www.linkedin.com/company/upscaller/" target='_blank'>
+            <BsTwitterX />
+            </a>
+            <a href="">
             <FaFacebook />
-            <FaFacebook />
-            <FaFacebook />
-            <FaFacebook />
+            </a>
+            <a href="https://www.instagram.com/upscaller_innovation?igsh=MmVlMjlkMTBhMg==" target='_blank'>
+            <FaInstagramSquare />
+            </a>
+            <a href="https://www.linkedin.com/company/upscaller/" target='_blank'>
+            <FaLinkedin />
+            </a>
             </Flex>
         </Box>
         <Box lineHeight={'2rem'}>
             <Text fontWeight={'600'} pb={'10px'} fontSize={'20px'}>Important Links</Text>
-            <Text>Home</Text>
-            <Text>About us</Text>
-            <Text>Services</Text>
-            <Text>Contact us</Text>
+            <Link to='/'>
+            <Text _hover={{color:'blue'}}>Home</Text>
+            </Link>
+            <Link to='/about'>
+            <Text _hover={{color:'blue'}}>About us</Text>
+            </Link>
+            <Link to='/services'>
+            <Text _hover={{color:'blue'}}>Services</Text>
+            </Link>
+            <Link to='/contact'> 
+            <Text _hover={{color:'blue'}}>Contact us</Text>
+            </Link>
         </Box>
         <Box lineHeight={'2rem'}  >
             <Text fontWeight={'600'} pb={'10px'} fontSize={'20px'}>Contact Us</Text>

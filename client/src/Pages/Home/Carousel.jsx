@@ -126,7 +126,7 @@ const Carousel = () => {
               className={index === centerSlideIndex ? 'center-image' : 'side-image'}
               onClick={() => handleImageClick(project.deployLink, index)}
               cursor="pointer"
-              _hover={{ filter: 'brightness(1.2)' }} // Neon effect on hover
+              _hover={{ filter: 'brightness(1.2)' }} 
             />
           </Flex>
         ))}

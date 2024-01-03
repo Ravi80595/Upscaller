@@ -11,7 +11,24 @@
   color: white;
 }
 
+.Link_btns{
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: inline-block;
+}
 
+.Link_btns::after{
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  transition:3s;
+  transition: width .3s;
+  background: #ffffff;
+}
+.Link_btns:hover::after{
+  width: 100%;
+}
 .mobileDiv{
   display: none;
 }

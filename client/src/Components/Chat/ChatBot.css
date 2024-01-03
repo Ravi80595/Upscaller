@@ -1,0 +1,38 @@
+/* Chatbot.css */
+
+/* Override default styles */
+.rsc-header {
+    background-color: rgb(16, 37, 127) !important;
+    color: white !important;
+    font-size: 20px !important;
+  }
+  
+  /* .rsc-container {
+    background-color: #C9FF8F !important;
+  } */
+  
+  .rsc-user {
+    background-color: rgb(16, 37, 127) !important;
+    color: white !important;
+  }
+  .cRmLCo{
+    background-color: rgb(16, 37, 127) !important;
+  }
+  
+  .hQsUiY{
+    background-color: rgb(16, 37, 127) !important;
+  }
+  
+  .godhbL{
+    background-color: rgb(16, 37, 127) !important;
+  }
+  
+  .rsc-bot {
+    background-color: rgb(16, 37, 127) !important;
+    color: white !important;
+  }
+  
+  
+  
+  
+  /* // font needs to be changed  */

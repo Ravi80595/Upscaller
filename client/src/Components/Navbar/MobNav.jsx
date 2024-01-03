@@ -25,15 +25,14 @@ const MobNav = () => {
 
 
 return (
-    <Flex justifyContent="space-between" alignItems="center" background='white' width='100vw'>
+    <Flex justifyContent="space-between" alignItems="center" background='black' width='100vw'>
        <Box pl={5}>
         <Link to='/home'>
-          <Image w={70} src={UpscallerLogo}/>
-        {/* <Text  fontWeight="bold" color='blue' pr='20px'>Zenoo</Text>*/}
+          <Image w={[90,70,70,70]} src={UpscallerLogo}/>
         </Link> 
       </Box>
-      <Button p="8px" color="black" bg="white" onClick={onOpen}>
-        <HamburgerIcon  w="30px" h="30px" />
+      <Button p="8px" color="white" bg="black" onClick={onOpen}>
+        <HamburgerIcon w="30px" h="30px" />
       </Button>
       <Drawer placement="right" onClose={onClose} isOpen={isOpen} size='full'>
         <DrawerOverlay />
@@ -42,37 +41,24 @@ return (
         <DrawerCloseButton pt={['20px','10px']} mt={['10px',"50px"]} color='white'/>
           <DrawerBody className="drawer-box">
             <Flex mt="5px" m='20px' gap="20px" direction="column" >
-              {/* <ScrollToTopLink to='/home'> */}
+              <Link to='/'>
                 <Text>Home</Text>
-                {/* </ScrollToTopLink> */}
-                {/* <ScrollToTopLink to='/about'> */}
+              </Link>
+                <Link to='/about'>
                 <Text>About Us</Text>
-                {/* </ScrollToTopLink> */}
-                {/* <ScrollToTopLink to='/board'>
-                <Text>Board</Text></ScrollToTopLink> */}
-                {/* <ScrollToTopLink to='/team'> */}
-                <Text>Our Team</Text>
-                {/* </ScrollToTopLink> */}
-                {/* <ScrollToTopLink to='/careers'> */}
-                <Text>Careers</Text>
-                {/* </ScrollToTopLink > */}
-                {/* <ScrollToTopLink to='/contact'> */}
+                </Link>
+         
+                {/* <Text>Our Team</Text> */}
+                <Link to='/services'>
+                <Text>Our Services</Text>
+                </Link>
+                <Link to='/contact'>
                 <Text>Contact Us</Text>
-                {/* </ScrollToTopLink> */}
+                </Link>
             </Flex>
-            {/* <Text mt="15px">MY ACCOUNT</Text> */}
-            {/* <Flex direction="column">
-                {/* <MobLogin name="Sign In" />  */}
-                 {/* <MobLogin name="Register" /> */}
-            {/* </Flex> */} 
           </DrawerBody>
         </DrawerContent>
       </Drawer>
-     
-      {/* <Flex gap="10px" mr="10px">
-        <IoIosHeartEmpty className={styles.logo} />
-        <BsBag className={styles.logo} />
-      </Flex> */}
     </Flex>
   );
 };

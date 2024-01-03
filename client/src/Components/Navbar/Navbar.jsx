@@ -129,7 +129,7 @@ const handleLogin = async () => {
           <Flex pt={'10px'} justifyContent={'end'} gap={'20px'}>
              <Text onClick={onOpen} fontSize={20} cursor={'pointer'}>Login</Text>
              <Link to='/contact'>
-            <Button background={'white'} color={'black'} p={'8px'} borderRadius={'15px'}>Contact Now</Button>
+            <Button background={'white'} color={'black'} p={'5px'} borderRadius={'15px'}>Contact Now</Button>
              </Link>
           </Flex>
           </Box>
@@ -138,10 +138,9 @@ const handleLogin = async () => {
       </Box>
       <div className='mobileDiv'>
               <MobNav/>
-          </div>
-
-          <Modal isOpen={isOpen} onClose={onClose}>
-          <ModalOverlay />
+      </div>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
           <ModalContent>
             <ModalHeader>Login</ModalHeader>
             <ModalCloseButton />

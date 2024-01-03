@@ -27,6 +27,7 @@ return (
         <Route path="/admin" element={<AdminDashboard/>}></Route>
         <Route path="/clientHome" element={<ClientHome/>}></Route>
         <Route path="/clientHome/:id" element={<Dashboard/>}></Route>
+        <Route path="/clientProfile" element={<Dashboard/>}></Route>
     </Routes>
     </>
   )

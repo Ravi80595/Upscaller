@@ -12,6 +12,7 @@ import GoogleChart from '../../Components/GoogleChart';
 
 
 
+
 const ClientTasks = ({data}) => {
     const [projects,setProjects]=useState([])
     const [taskStatus,setTaskStatus]=useState([])
@@ -57,10 +58,10 @@ function formatDate(inputDate) {
       const formattedDate = `${year}-${month}-${day}`;
     return formattedDate;
 }
-
+const {t}=useTranslation()
 return (
     <Box>
-        <Text fontSize={'34px'} fontWeight={'600'}>Tasks</Text>
+        <Text fontSize={'34px'} fontWeight={'600'}>{t('Tasks')}</Text>
         <Tabs>
         <TabList pb={'20px'}>
             <Tab>Summary</Tab>

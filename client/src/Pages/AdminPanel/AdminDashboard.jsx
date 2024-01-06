@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import "../Dashboard/Dashboard.css"
-import { Flex,Box,Text,Menu,MenuButton,MenuGroup,MenuDivider,MenuList,MenuItem,Avatar,Image} from '@chakra-ui/react'
+import { Flex,Box,Text,Menu,MenuButton,MenuGroup,MenuDivider,MenuList,MenuItem,Avatar,Image, Select} from '@chakra-ui/react'
 import { useState } from 'react'
 import {GiPostStamp} from "react-icons/gi"
 // import axios from 'axios'
@@ -20,9 +20,9 @@ import ProjectForm from './ProjectForm'
 const AdminDashboard = () => {
     const [show,setShow]=useState("Users")
     const [profileData,setProfileData]=useState([])
-
+    const [selectedLanguage, setSelectedLanguage] = useState('en');
 // console.log(profileData,'dddd')
-
+const languageContent = require(`../lang${selectedLanguage}.json`);
 useEffect(() => {
       const token = localStorage.getItem('token');
       if (token) {
@@ -43,7 +43,10 @@ useEffect(() => {
       }
 }, []); 
 
-
+const handleLanguageChange = (event) => {
+  const selectedLang = event.target.value;
+  setSelectedLanguage(selectedLang);
+};
 
 
 return (
@@ -97,7 +100,7 @@ return (
   <Box id='rhsBox' w='84%' ml='16%' h='auto' backgroundColor={'#f9f9f9'}> 
     <Box id='navbarBox' backgroundColor={'#15283c'} p='0px 40px'>
     <Flex justifyContent='space-between' pt={3} mb={3}>
-    <Text fontWeight='bold'>Welcome</Text>
+    <Text fontWeight='bold'>{languageContent.Welcome}</Text>
     {/* <Menu fontSize="20px" backgroundColor='black'>
             <MenuButton>
               <Avatar w={'30px'} src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'/>
@@ -118,11 +121,22 @@ return (
               </MenuGroup>
             </MenuList>
           </Menu> */}
+           <Select
+              value={selectedLanguage}
+              onChange={handleLanguageChange}
+              width="80px"
+              variant="outline"
+              color="white"
+            >
+              <option value="en">EN</option>
+              <option value="hi">HI</option>
+              {/* Add more languages as per your requirement */}
+            </Select>
     </Flex>
     </Box>
   <Box id='rhsBody' m='30px' p='30px'>
 {
-show==="create"?<Clients data={profileData}/>:show==="Projects"?<AdminProjects data={profileData}/>:<h1>Fearture Available Soon</h1>
+show==="create"?<Clients data={profileData}/>:show==="Projects"?<AdminProjects data={profileData}/>: <h1>{languageContent.featureComingSoon}</h1>
 }
 
 </Box>

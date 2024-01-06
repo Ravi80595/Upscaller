@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import "./Dashboard.css"
-import { Flex,Box,Text,Menu,MenuButton,MenuGroup,MenuDivider,MenuList,MenuItem,Avatar,Image} from '@chakra-ui/react'
+import { Flex,Box,Text,Menu,MenuButton,MenuGroup,MenuDivider,MenuList,MenuItem,Avatar,Image, Select} from '@chakra-ui/react'
 import { useState } from 'react'
 import {GiPostStamp} from "react-icons/gi"
 import { IoAnalyticsSharp } from "react-icons/io5";
@@ -13,12 +13,16 @@ import ClientTasks from './ClientTasks'
 import UpscallerLogo from '../../Assets/Images/UpscallerLogo.png'
 import ClientSprints from './ClientSprints'
 import GettingStarted from './GettingStarted'
+import { useTranslation, initReactI18next } from 'react-i18next';
+import i18n from 'i18next';
 
 
 const Dashboard = () => {
     const [show,setShow]=useState("Users")
     const [profileData,setProfileData]=useState([])
-
+    const [selectedLanguage, setSelectedLanguage] = useState('en');
+    
+    const { t } = useTranslation();
 // console.log(profileData,'data')
 
 
@@ -41,7 +45,11 @@ useEffect(() => {
           });
       }
 }, []); 
-
+const handleLanguageChange = (event) => {
+  const selectedLang = event.target.value;
+  i18n.changeLanguage(selectedLang); 
+  setSelectedLanguage(selectedLang);
+};
 
 
 
@@ -53,29 +61,29 @@ return (
       <Image w={'70%'} m={'auto'} src={UpscallerLogo}/>
       </Flex>
       <Box id='linkBox' marginTop={'20px'} color={'white'}>
-      <Text display={["none","none","none","block"]} pb={'5px'} color={'white'} pl={'10px'}>General</Text>
+      <Text display={["none","none","none","block"]} pb={'5px'} color={'white'} pl={'10px'}>{t('General')}</Text>
       <hr />
       <Flex id='usersBox' _hover={{color:'black'}} p='10px 17px' className='linkItem' onClick={()=>setShow("create")}>
       <MdOutlineAccessTime />
-      <Text pl={["0px","5px",'15px']} className="lhsName">Tasks</Text>
+      <Text pl={["0px","5px",'15px']} className="lhsName">{t('Tasks')}</Text>
       </Flex>
       <Flex id='usersBox' _hover={{color:'black'}} p='10px 17px' className='linkItem' onClick={()=>setShow("sprints")}>
       <GiPostStamp/>
-      <Text pl={["0px","5px",'15px']} className="lhsName">Sprints</Text>
+      <Text pl={["0px","5px",'15px']} className="lhsName">{t('Sprints')}</Text>
       </Flex>
       <Flex id='usersBox' _hover={{color:'black'}} p='10px 17px' className='linkItem' onClick={()=>setShow("Users")}>
       <IoAnalyticsSharp />      
-      <Text pl={["0px","5px",'15px']} className="lhsName">Road Map</Text>
+      <Text pl={["0px","5px",'15px']} className="lhsName">{t('Road Map')}</Text>
       </Flex>
       <Flex id='usersBox' _hover={{color:'black'}} p='10px 17px' className='linkItem' onClick={()=>setShow("gettingStarted")}>
       <MdOutlineAccessTime />
-      <Text pl={["0px","5px",'15px']} className="lhsName">Getting started</Text>
+      <Text pl={["0px","5px",'15px']} className="lhsName">{t('Getting started')}</Text>
       </Flex>
-      <Text display={["none","none","none","block"]} pb={'5px'} color={'white'} pl={'10px'} pt={'20px'}>Development</Text>
+      <Text display={["none","none","none","block"]} pb={'5px'} color={'white'} pl={'10px'} pt={'20px'}>{t('Development')}</Text>
       <hr />
       <Flex id='usersBox' _hover={{color:'black'}} p='10px 17px' className='linkItem' onClick={()=>setShow("track")}>
       <MdOutlineAccessTime />
-      <Text pl={["0px","5px",'15px']} className="lhsName">BitBucket updates</Text>
+      <Text pl={["0px","5px",'15px']} className="lhsName">{t('BitBucket updates')}</Text>
       </Flex>
       </Box>
 </Box>
@@ -88,24 +96,36 @@ return (
   <Box id='rhsBox' w='84%' ml='16%' h='auto' backgroundColor={'#f9f9f9'}> 
     <Box id='navbarBox' backgroundColor={'#15283c'} p='0px 40px' pb={'10px'} mb={'10px'}>
     <Flex justifyContent='space-between' pt={3} pb={8}>
-    <Text fontWeight='bold'>Welcome</Text>
+    <Text fontWeight='bold'>{t("Welcome")}</Text>
+    <Select
+              value={selectedLanguage}
+              onChange={handleLanguageChange}
+              width="80px"
+              variant="outline"
+            >
+              <option value="en">English</option>
+              <option value="fr">French</option>
+              <option value="hi">Hindi</option>
+             
+             
+            </Select>
     <Menu fontSize="20px" style={{color:'black',paddingBottom:"20px"}}>
             <MenuButton>
               <Avatar src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'/>
             </MenuButton>
             <MenuList style={{color:'black'}}>
-              <MenuGroup title='Profile'>
+              <MenuGroup title={t('Profile')}>
                 <Link to="/adminProfile">
-                <MenuItem>My Account</MenuItem>
+                <MenuItem>{t('My Account')}</MenuItem>
                 </Link>
               </MenuGroup>
               <MenuDivider />
-              <MenuGroup title='Manage' style={{color:'black'}}>
+              <MenuGroup title={t('Manage')} style={{color:'black'}}>
                 <Link to="/adminSetting">
-                <MenuItem>Setting & Privacy</MenuItem>
+                <MenuItem>{t('Setting & Privacy')}</MenuItem>
                 </Link>
-                <MenuItem>Language</MenuItem>
-                <MenuItem>Logout</MenuItem>
+                <MenuItem>{t('Language')}</MenuItem>
+                <MenuItem>{t('Logout')}</MenuItem>
               </MenuGroup>
             </MenuList>
           </Menu>
@@ -113,7 +133,7 @@ return (
     </Box>
   <Box id='rhsBody' m='30px' p='30px'>
 {
-show==="create"?<ClientTasks data={profileData}/>:show==="sprints"?<ClientSprints data={profileData}/>:show==="gettingStarted"?<GettingStarted data={profileData}/>:<h1>Fearture Available Soon</h1>
+show==="create"?<ClientTasks data={profileData}/>:show==="sprints"?<ClientSprints data={profileData}/>:show==="gettingStarted"?<GettingStarted data={profileData}/>:<h1>{t('Fearture Available Soon')}</h1>
 }
 
 </Box>

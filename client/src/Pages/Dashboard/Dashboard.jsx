@@ -14,13 +14,13 @@ import UpscallerLogo from '../../Assets/Images/UpscallerLogo.png'
 import ClientSprints from './ClientSprints'
 import GettingStarted from './GettingStarted'
 import { useTranslation, initReactI18next } from 'react-i18next';
-import i18n from 'i18next';
+
 
 
 const Dashboard = () => {
     const [show,setShow]=useState("Users")
     const [profileData,setProfileData]=useState([])
-    const [selectedLanguage, setSelectedLanguage] = useState('en');
+
     
     const { t } = useTranslation();
 // console.log(profileData,'data')
@@ -45,11 +45,7 @@ useEffect(() => {
           });
       }
 }, []); 
-const handleLanguageChange = (event) => {
-  const selectedLang = event.target.value;
-  i18n.changeLanguage(selectedLang); 
-  setSelectedLanguage(selectedLang);
-};
+
 
 
 
@@ -83,7 +79,7 @@ return (
       <hr />
       <Flex id='usersBox' _hover={{color:'black'}} p='10px 17px' className='linkItem' onClick={()=>setShow("track")}>
       <MdOutlineAccessTime />
-      <Text pl={["0px","5px",'15px']} className="lhsName">{t('BitBucket updates')}</Text>
+      <Text pl={["0px","5px",'15px']} className="lhsName">{t('Code updates')}</Text>
       </Flex>
       </Box>
 </Box>
@@ -97,34 +93,25 @@ return (
     <Box id='navbarBox' backgroundColor={'#15283c'} p='0px 40px' pb={'10px'} mb={'10px'}>
     <Flex justifyContent='space-between' pt={3} pb={8}>
     <Text fontWeight='bold'>{t("Welcome")}</Text>
-    <Select
-              value={selectedLanguage}
-              onChange={handleLanguageChange}
-              width="80px"
-              variant="outline"
-            >
-              <option value="en">English</option>
-              <option value="fr">French</option>
-              <option value="hi">Hindi</option>
-             
-             
-            </Select>
+
     <Menu fontSize="20px" style={{color:'black',paddingBottom:"20px"}}>
             <MenuButton>
               <Avatar src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'/>
             </MenuButton>
             <MenuList style={{color:'black'}}>
               <MenuGroup title={t('Profile')}>
-                <Link to="/adminProfile">
+                <Link to="/profileDashboard">
                 <MenuItem>{t('My Account')}</MenuItem>
                 </Link>
               </MenuGroup>
               <MenuDivider />
               <MenuGroup title={t('Manage')} style={{color:'black'}}>
-                <Link to="/adminSetting">
+                <Link to="/profileDashboard">
                 <MenuItem>{t('Setting & Privacy')}</MenuItem>
                 </Link>
+                <Link to='/profileDashboard'>
                 <MenuItem>{t('Language')}</MenuItem>
+                </Link>
                 <MenuItem>{t('Logout')}</MenuItem>
               </MenuGroup>
             </MenuList>

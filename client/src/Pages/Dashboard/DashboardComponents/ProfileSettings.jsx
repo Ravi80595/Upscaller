@@ -1,10 +1,12 @@
 import { Box,Flex,Text } from '@chakra-ui/react'
 import React, { useState } from 'react'
-// import AdminNavbar from './AdminNavbar'
 import {AiOutlineEdit} from "react-icons/ai"
 import {RiLockPasswordLine} from "react-icons/ri"
-// import EditProfilePage from './EditProfilePage'
-// import AdminPassword from './AdminPassword'
+import UserProfileNavbar from './UserProfileDashboard'
+import EditProfile from './EditProfile'
+import EditPassword from './EditPassword'
+
+
 
 const ProfileSettings = () => {
     const [show,setShow]=useState("editProfile")
@@ -12,8 +14,10 @@ const ProfileSettings = () => {
 
 
 return (
+    <>
+    <UserProfileNavbar/>
     <Box w='100%'>
-    {/* <AdminNavbar/> */}
+   
     <Flex m="auto" h={750}>
     <Box w="25%" border="2px solid #b8b8b8" borderRight="none" backgroundColor="white">
     <hr />
@@ -31,13 +35,14 @@ return (
     <Text w="85%" m='auto'>Control settings for connected experiences across Instagram, the Facebook app and Messenger, including story and post sharing and logging in.</Text>
     </Box>
     </Box>
-        {/* <Box border="2px solid #b8b8b8" w="75%" backgroundColor="white">
+        <Box border="2px solid #b8b8b8" w="75%" backgroundColor="white">
           {
-          show==="editProfile"?<EditProfilePage/>:show==="changePassword"?<AdminPassword/>:<h1>Features Available soon...</h1>
-          }
-          </Box> */}
+              show==="editProfile"?<EditProfile/>:show==="changePassword"?<EditPassword/>:<h1>Features Available soon...</h1>
+            }
+          </Box>
      </Flex>
     </Box>
+            </>
   )
 }
 

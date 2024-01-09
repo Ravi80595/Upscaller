@@ -8,7 +8,9 @@ import Services from '../Pages/Services/Services'
 import Login from '../Pages/SignupLogin/Login'
 import AdminDashboard from '../Pages/AdminPanel/AdminDashboard'
 import ClientHome from '../Pages/Dashboard/ClientHome'
-
+import ClientProfile from '../Pages/Dashboard/ClientProfile'
+import Language from '../Pages/Dashboard/DashboardComponents/Language'
+import UserProfileDashboard from '../Pages/Dashboard/DashboardComponents/UserProfileDashboard'
 
 
 const AllRoute = () => {
@@ -26,8 +28,10 @@ return (
         <Route path="/dashboard" element={<Dashboard/>}></Route>
         <Route path="/admin" element={<AdminDashboard/>}></Route>
         <Route path="/clientHome" element={<ClientHome/>}></Route>
-        <Route path="/clientHome/:id" element={<Dashboard/>}></Route>
-        <Route path="/clientProfile" element={<Dashboard/>}></Route>
+        <Route path="/clientHome/:id" element={<ClientProfile/>}></Route>
+        <Route path="/profile" element={<ClientProfile/>}></Route>
+        <Route path="/language" element={<Language/>}></Route>
+        <Route path="/profileDashboard" element={<UserProfileDashboard/>}></Route>
     </Routes>
     </>
   )

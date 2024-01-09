@@ -8,6 +8,7 @@ import { Pie } from 'react-chartjs-2';
 import PieChart from '../../Components/GoogleChart';
 import { IoMdAdd } from "react-icons/io";
 import GoogleChart from '../../Components/GoogleChart';
+import { useTranslation } from 'react-i18next';
 
 
 
